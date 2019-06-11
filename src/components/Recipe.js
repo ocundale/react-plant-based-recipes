@@ -8,11 +8,8 @@ export default class Recipe extends Component {
                 publisher,
                 recipe_id
             } = this.props.recipe;
-{console.log(image_url,
-                title,
-                source_url,
-                publisher,
-                recipe_id);}
+        const {handleDetails} = this.props;
+
         return (
 
             <React.Fragment>
@@ -27,7 +24,7 @@ export default class Recipe extends Component {
                             <h6 className="text-warning text-slanted">Provided by {publisher}</h6>
                         </div>
                         <div className="card-footer">
-                            <button type="button button-primary text-capitalize" className="btn">
+                            <button type="button" className="btn btn-primary text-capitalize" onClick={()=>handleDetails(0,recipe_id)}>
                             details
                             </button>
                             <a href={source_url}
